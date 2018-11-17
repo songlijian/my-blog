@@ -12,21 +12,25 @@
 
         <!-- Styles -->
         <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+        
 
             .full-height {
-                height: 100vh;
+                height: 70px;
+                width: :100%;
             }
+            .mine {
+                float: left;
+                height: 70px;
+                width: 1100px;
+                text-align: center;
 
+            }
+            .mine_1{
+                float: left;
+                text-align: center;
+                line-height:70px;            
+            }
             .flex-center {
-                align-items: center;
                 display: flex;
                 justify-content: center;
             }
@@ -65,32 +69,15 @@
         </style>
     </head>
     <body>
+
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
+            <div><span class ="mine"><a href="/article/index"><h2>welcome to my blog</h2></a></span></div>
+            <div><span class ="mine_1"><a href="/article/create">写文章</a></span></div>
+        </div>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+            
+        <div class="container">
+            @yield('content')
         </div>
     </body>
 </html>
